@@ -20,20 +20,18 @@ public class Person {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getPhone() {
         return phone;
-    }
-
-    public void setPhone(String phone) {
-        this.phone = phone;
     }
 
     @Override
     public String toString() {
         return "[" + this.name + ": " + this.phone + "]";
     }
+
+    //getter для теста работы JsonMapper
+    public String getTest() {
+        return "test";
+    }
 }
+

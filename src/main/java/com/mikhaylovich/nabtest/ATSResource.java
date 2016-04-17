@@ -2,6 +2,7 @@ package com.mikhaylovich.nabtest;
 
 import javax.inject.Inject;
 import javax.inject.Named;
+import javax.persistence.Entity;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
@@ -27,8 +28,6 @@ public class ATSResource {
 
     @Inject
     private Service2 service2;
-
-
 
     @GET
     @Path("/json")
@@ -72,4 +71,15 @@ public class ATSResource {
         String personJson = JsonMapper.convertToJson(person);
         return Response.ok(personJson).build();
     }
+
+    @POST
+    @Path("/post")
+    @Consumes("application/json")
+    public Response postPerson(String json) {
+        Person person = JsonMapper.parseJson(json, Person.class);
+        System.out.println("\n\n\n\n" + person + "\n\n\n\n");
+        return Response.ok().build();
+    }
+
 }
+

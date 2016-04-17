@@ -15,9 +15,9 @@ public class JsonMapper {
      */
     public static <T> T parseJson(String json, Class<T> valueType) {
         try {
-            return SERVICE_MAPPER.treeToValue(SERVICE_MAPPER.readTree(json), valueType);
+            return SERVICE_MAPPER.readValue(json.getBytes(), valueType);
         } catch (IOException e) {
-            throw new RuntimeException("cannot map JSON to " + valueType.getName(), e);
+            throw new RuntimeException("cannot map JSON[" + json + "] to " + valueType.getName(), e);
         }
     }
 

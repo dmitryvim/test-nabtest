@@ -2,10 +2,7 @@ package com.mikhaylovich.nabtest;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.ws.rs.GET;
-import javax.ws.rs.POST;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
 @Path("/test")
@@ -27,6 +24,9 @@ public class ATSResource {
 
     @Inject
     private InterfaceService1 service1;
+
+    @Inject
+    private Service2 service2;
 
 
 
@@ -51,8 +51,15 @@ public class ATSResource {
     @GET
     @Path("/inject/interface")
     public Response getInjectedInterface() {
-        Person ii = service1.getPerson();
+        Person ii = this.service1.getPerson();
         String iiJson = JsonMapper.convertToJson(ii);
         return Response.ok(iiJson).build();
     }
+
+    @GET
+    @Path("/inject/class")
+    public Response getInjectedClass() {
+        return Response.ok(this.service2.getPersonJson()).build();
+    }
+
 }

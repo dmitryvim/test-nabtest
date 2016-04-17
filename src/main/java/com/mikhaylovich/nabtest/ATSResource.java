@@ -8,7 +8,7 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.Response;
 
-@Path("/ats")
+@Path("/test")
 public class ATSResource {
 
     /**
@@ -24,6 +24,9 @@ public class ATSResource {
     @Inject
     @Named("head.phone")
     private String head_phone;
+
+    @Inject
+    private InterfaceService1 service1;
 
 
 
@@ -43,5 +46,13 @@ public class ATSResource {
         Person head = new Person(this.head_name, this.head_phone);
         String personJson = JsonMapper.convertToJson(head);
         return Response.ok(personJson).build();
+    }
+
+    @GET
+    @Path("/inject/interface")
+    public Response getInjectedInterface() {
+        Person ii = service1.getPerson();
+        String iiJson = JsonMapper.convertToJson(ii);
+        return Response.ok(iiJson).build();
     }
 }

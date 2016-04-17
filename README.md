@@ -1,4 +1,9 @@
+# Тест работы nuts-and-bolts
+
+## Запуск программы
 ```
 mvn clean install
-java -DsettingsDir=src/etc/ats/ -jar target/nabtest-1.0-SNAPSHOT.jar
+java -DsettingsDir=src/etc/ats/ -jar target/nabtest.jar
 ```
+
+## Пользуйтесь

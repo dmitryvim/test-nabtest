@@ -1,8 +1,12 @@
 package com.mikhaylovich.nabtest;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class Person {
     private String name;
     private String phone;
+    @JsonProperty("property")
+    private String nonProp;
 
     /**
      * Пустой конструктор необходим, чтобы можно было распарсить json
@@ -14,6 +18,7 @@ public class Person {
     public Person(String name, String phone) {
         this.name = name;
         this.phone = phone;
+        this.nonProp = "nonProp";
     }
 
     public String getName() {
@@ -32,6 +37,10 @@ public class Person {
     //getter для теста работы JsonMapper
     public String getTest() {
         return "test";
+    }
+
+    public String getNonProp() {
+        return this.nonProp;
     }
 }
 

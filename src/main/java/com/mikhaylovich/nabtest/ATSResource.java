@@ -62,4 +62,11 @@ public class ATSResource {
         return Response.ok(this.service2.getPersonJson()).build();
     }
 
+    @GET
+    @Path("/name/{name}/phone/{phone}")
+    public Response getPersonFromString(@PathParam("name") String name, @PathParam("phone") String phone) {
+        Person person = new Person(name, phone);
+        String personJson = JsonMapper.convertToJson(person);
+        return Response.ok(personJson).build();
+    }
 }

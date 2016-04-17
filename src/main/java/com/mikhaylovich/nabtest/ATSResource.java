@@ -2,7 +2,6 @@ package com.mikhaylovich.nabtest;
 
 import javax.inject.Inject;
 import javax.inject.Named;
-import javax.persistence.Entity;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Response;
 
@@ -81,5 +80,8 @@ public class ATSResource {
         return Response.ok().build();
     }
 
+    //TODO redirect
+    //TODO @CookieParam
+    //TODO persistence
 }
 

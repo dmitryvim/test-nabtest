@@ -50,6 +50,7 @@ public class ATSResource {
 
     @GET
     @Path("/inject/interface")
+    @Produces(value = "application/json")
     public Response getInjectedInterface() {
         Person ii = this.service1.getPerson();
         String iiJson = JsonMapper.convertToJson(ii);
@@ -58,12 +59,14 @@ public class ATSResource {
 
     @GET
     @Path("/inject/class")
+    @Produces(value = "application/json")
     public Response getInjectedClass() {
         return Response.ok(this.service2.getPersonJson()).build();
     }
 
     @GET
     @Path("/name/{name}/phone/{phone}")
+    @Produces(value = "application/json")
     public Response getPersonFromString(@PathParam("name") String name, @PathParam("phone") String phone) {
         Person person = new Person(name, phone);
         String personJson = JsonMapper.convertToJson(person);

@@ -1,7 +1,6 @@
 package com.mikhaylovich.nabtest.service;
 
 import com.google.inject.Provider;
-import com.google.inject.Provides;
 import com.mikhaylovich.nabtest.model.Person;
 
 import javax.inject.Inject;
@@ -20,7 +19,6 @@ public class Service3Provider implements Provider<Service3> {
     @Named("provider.phone")
     private String phone;
 
-    @Provides
     private Service3 service3() {
         return new Service3(new Person(name, phone));
     }

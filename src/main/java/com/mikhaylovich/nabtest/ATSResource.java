@@ -3,6 +3,7 @@ package com.mikhaylovich.nabtest;
 import com.mikhaylovich.nabtest.model.Person;
 import com.mikhaylovich.nabtest.service.InterfaceService1;
 import com.mikhaylovich.nabtest.service.Service2;
+import com.mikhaylovich.nabtest.service.Service3;
 import com.mikhaylovich.nabtest.util.JsonMapper;
 
 import javax.inject.Inject;
@@ -33,6 +34,9 @@ public class ATSResource {
     @Inject
     private Service2 service2;
 
+    @Inject
+    private Service3 service3;
+
     @GET
     @Path("/json")
     @Produces(value = "application/json")
@@ -58,6 +62,13 @@ public class ATSResource {
         Person ii = this.service1.getPerson();
         String iiJson = JsonMapper.convertToJson(ii);
         return Response.ok(iiJson).build();
+    }
+
+    @GET
+    @Path("/inject/providen")
+    @Produces(value = "application/json")
+    public Response getProvidenInjection() {
+        return Response.ok(this.service3.getPersonJson()).build();
     }
 
     @GET

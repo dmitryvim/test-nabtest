@@ -1,4 +1,7 @@
-package com.mikhaylovich.nabtest;
+package com.mikhaylovich.nabtest.service;
+
+import com.mikhaylovich.nabtest.model.Person;
+import com.mikhaylovich.nabtest.util.JsonMapper;
 
 /**
  * @author mhty

@@ -1,5 +1,10 @@
 package com.mikhaylovich.nabtest;
 
+import com.mikhaylovich.nabtest.model.Person;
+import com.mikhaylovich.nabtest.service.InterfaceService1;
+import com.mikhaylovich.nabtest.service.Service2;
+import com.mikhaylovich.nabtest.util.JsonMapper;
+
 import javax.inject.Inject;
 import javax.inject.Named;
 import javax.ws.rs.*;

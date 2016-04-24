@@ -1,6 +1,8 @@
 package com.mikhaylovich.nabtest;
 
 
+import com.mikhaylovich.nabtest.service.InterfaceService1;
+import com.mikhaylovich.nabtest.service.Service1;
 import ru.hh.nab.NabModule;
 
 public class AppModule extends NabModule {

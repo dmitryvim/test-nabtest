@@ -1,4 +1,4 @@
-package com.mikhaylovich.nabtest;
+package com.mikhaylovich.nabtest.model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

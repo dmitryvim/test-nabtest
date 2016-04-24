@@ -1,5 +1,7 @@
-package com.mikhaylovich.nabtest;
+package com.mikhaylovich.nabtest.test;
 
+import com.mikhaylovich.nabtest.model.Person;
+import com.mikhaylovich.nabtest.util.JsonMapper;
 import org.testng.annotations.Test;
 
 import static org.testng.Assert.assertEquals;

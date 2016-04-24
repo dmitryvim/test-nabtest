@@ -1,4 +1,6 @@
-package com.mikhaylovich.nabtest;
+package com.mikhaylovich.nabtest.service;
+
+import com.mikhaylovich.nabtest.model.Person;
 
 /**
  * @author mhty
